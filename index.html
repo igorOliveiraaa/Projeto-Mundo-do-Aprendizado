@@ -1,11 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo do Aprendizado</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -18,7 +18,6 @@
         </h1>
     </header>
 
-    <!-- Seção Principal -->
     <div id="mainSection" class="max-w-4xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="card button-gradient-blue text-white">
@@ -47,47 +46,52 @@
         </div>
     </div>
 
-    <!-- Seção de Matérias -->
     <div id="subjectsSection" class="max-w-4xl mx-auto hidden">
         <button onclick="showSection('main')"
             class="mb-6 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600" id="btn-voltar">
             Voltar
         </button>
 
-        <div id="subjectsList" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Matérias existentes -->
-            <div class="subject-card math" onclick="selectSubject('Matemática')">
-                <i class="fas fa-calculator text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Matemática</h3>
+        <div id="subjectsList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="subject-card math" onclick="selectSubject('Matemática', 'Prof. Carlos')">
+                <img src="./img/prof2.png" alt="Professor de Matemática" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Prof. Carlos</h3>
+                <p>Matemática</p>
             </div>
-            <div class="subject-card history" onclick="selectSubject('História')">
-                <i class="fas fa-clock text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">História</h3>
+            <div class="subject-card history" onclick="selectSubject('História', 'Profª. Ana')">
+                <img src="./img/prof1.png" alt="Professora de História" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Profª. Ana</h3>
+                <p>História</p>
             </div>
-            <div class="subject-card science" onclick="selectSubject('Ciências')">
-                <i class="fas fa-flask text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Ciências</h3>
+            <div class="subject-card science" onclick="selectSubject('Ciências', 'Prof. Pedro')">
+                <img src="./img/prof4.png" alt="Professor de Ciências" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Prof. Pedro</h3>
+                <p>Ciências</p>
             </div>
-            <div class="subject-card portuguese" onclick="selectSubject('Português')">
-                <i class="fas fa-book-open text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Português</h3>
+            <div class="subject-card portuguese" onclick="selectSubject('Português', 'Profª. Maria')">
+                <img src="./img/prof3.png" alt="Professora de Português" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Profª. Maria</h3>
+                <p>Português</p>
             </div>
-            <!-- Novas matérias -->
-            <div class="subject-card geography" onclick="selectSubject('Geografia')">
-                <i class="fas fa-globe text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Geografia</h3>
+            <div class="subject-card geography" onclick="selectSubject('Geografia', 'Prof. João')">
+                <img src="./img/prof6.png" alt="Professor de Geografia" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Prof. João</h3>
+                <p>Geografia</p>
             </div>
-            <div class="subject-card physical-education" onclick="selectSubject('Educação Física')">
-                <i class="fas fa-running text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Educação Física</h3>
+            <div class="subject-card physical-education" onclick="selectSubject('Educação Física', 'Profª. Clara')">
+                <img src="./img/prof5.png" alt="Professora de Educação Física" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Profª. Clara</h3>
+                <p>Educação Física</p>
             </div>
-            <div class="subject-card english" onclick="selectSubject('Inglês')">
-                <i class="fas fa-language text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Inglês</h3>
+            <div class="subject-card english" onclick="selectSubject('Inglês', 'Prof. Lucas')">
+                <img src="./img/prof7.png" alt="Professor de Inglês" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Prof. Lucas</h3>
+                <p>Inglês</p>
             </div>
-            <div class="subject-card art" onclick="selectSubject('Arte')">
-                <i class="fas fa-palette text-2xl mb-2"></i>
-                <h3 class="text-xl font-bold">Arte</h3>
+            <div class="subject-card art" onclick="selectSubject('Arte', 'Profª. Sofia')">
+                <img src="./img/prof8.png" alt="Professora de Arte" class="w-24 h-24 rounded-full mx-auto mb-2">
+                <h3 class="text-xl font-bold">Profª. Sofia</h3>
+                <p>Arte</p>
             </div>
         </div>
 
@@ -109,7 +113,6 @@
         </div>
     </div>
 
-    <!-- Seção de Histórias -->
     <div id="storySection" class="max-w-4xl mx-auto hidden">
         <button onclick="showSection('main')"
             class="mb-6 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600">
@@ -123,14 +126,7 @@
             </h2>
 
             <div class="space-y-4">
-                <div>
-                    <label class="block text-purple-600 font-bold mb-2">
-                        Quantos personagens tem sua história?
-                    </label>
-                    <input type="number" id="charactersCount" class="w-full p-3 border-2 border-purple-300 rounded-lg"
-                        min="1" max="5">
-                </div>
-
+                <!-- Removido o campo de quantidade de personagens -->
                 <div>
                     <label class="block text-purple-600 font-bold mb-2">
                         Quais são os nomes dos personagens?
@@ -155,13 +151,19 @@
                         placeholder="Ex: uma aventura espacial, um mistério na escola">
                 </div>
 
-                <!-- Novos inputs para o público infantil -->
+                <!-- Modificado para um menu de seleção -->
                 <div>
                     <label class="block text-purple-600 font-bold mb-2">
                         Qual é o gênero da história?
                     </label>
-                    <input type="text" id="storyGenre" class="w-full p-3 border-2 border-purple-300 rounded-lg"
-                        placeholder="Ex: aventura, fantasia, mistério">
+                    <select id="storyGenre" class="w-full p-3 border-2 border-purple-300 rounded-lg">
+                        <option value="">Selecione o gênero</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Mistério">Mistério</option>
+                        <option value="Fábula">Fábula</option>
+                        <option value="Conto de Fadas">Conto de Fadas</option>
+                    </select>
                 </div>
 
                 <div>
@@ -188,13 +190,7 @@
                         placeholder="Ex: salvar a floresta, encontrar um amigo perdido">
                 </div>
 
-                <div>
-                    <label class="block text-purple-600 font-bold mb-2">
-                        Qual é a moral ou lição da história?
-                    </label>
-                    <input type="text" id="storyMoral" class="w-full p-3 border-2 border-purple-300 rounded-lg"
-                        placeholder="Ex: a importância da amizade, nunca desistir">
-                </div>
+                <!-- Removido o campo da moral da história -->
 
                 <button onclick="generateStory()" id="generateStoryBtn"
                     class="w-full px-4 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 font-bold mt-4">
@@ -202,14 +198,35 @@
                 </button>
 
                 <div id="storyResponse" class="response-area hidden"></div>
+                <!-- Área para as imagens relacionadas -->
+                <div id="storyImages" class="mt-4 hidden">
+                    <h3 class="text-lg font-bold text-purple-600 mb-2">Imagens relacionadas à história:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="imageLinks">
+                        <!-- Links serão inseridos aqui -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Script JavaScript -->
     <script>
         // Configuração da API Groq
-        const GROQ_API_KEY = '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';
+        const GROQ_API_KEY = "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";
         let currentSubject = '';
+        let currentTeacher = '';
+
+        // Mapeamento de matérias para professores
+        const subjectTeacherMap = {
+            'Matemática': 'Prof. Carlos',
+            'História': 'Profª. Ana',
+            'Ciências': 'Prof. Pedro',
+            'Português': 'Profª. Maria',
+            'Geografia': 'Prof. João',
+            'Educação Física': 'Profª. Clara',
+            'Inglês': 'Prof. Lucas',
+            'Arte': 'Profª. Sofia'
+        };
 
         // Funções de navegação
         function showSection(sectionName) {
@@ -222,14 +239,16 @@
             // Reset responses
             document.getElementById('questionResponse').classList.add('hidden');
             document.getElementById('storyResponse').classList.add('hidden');
+            document.getElementById('storyImages').classList.add('hidden');
         }
 
-        function selectSubject(subject) {
+        function selectSubject(subject, teacher) {
             currentSubject = subject;
+            currentTeacher = teacher;
             document.getElementById('subjectsList').classList.add('hidden');
             document.getElementById('questionArea').classList.remove('hidden');
             document.getElementById('btn-voltar').classList.add('hidden');
-            document.getElementById('questionTitle').textContent = `Tire suas dúvidas de ${subject}`;
+            document.getElementById('questionTitle').textContent = `Fale com ${teacher} sobre ${subject}`;
         }
 
         function backToSubjects() {
@@ -259,8 +278,8 @@
                         messages: [{
                             role: "system",
                             content: isStory
-                                ? "Você é um contador de histórias infantis criativo e amigável. Crie histórias apropriadas para crianças, divertidas e educativas. Certifique-se de que o conteúdo é adequado para jovens, evitando tópicos ou linguagens inapropriadas."
-                                : "Você é um professor amigável que explica conceitos de forma simples e clara para crianças. Use analogias e exemplos do dia a dia. Certifique-se de que suas explicações são adequadas para a idade, evitando tópicos complexos ou adultos, e mantendo o conteúdo apropriado para crianças."
+                                ? "Você é um contador de histórias infantis criativo e amigável. Crie histórias apropriadas para crianças, divertidas e educativas. Certifique-se de que o conteúdo é adequado para jovens, evitando tópicos ou linguagens inapropriadas. No final da história, inclua a moral ou lição aprendida."
+                                : `Você é o ${currentTeacher}, professor(a) de ${currentSubject}. Responda apenas a perguntas relacionadas a ${currentSubject}. Se a pergunta não for sobre ${currentSubject}, responda educadamente que não pode ajudar e sugira procurar o professor responsável pela matéria. Os professores e suas matérias são: ${getTeachersList()}.`
                         }, {
                             role: "user",
                             content: prompt
@@ -273,14 +292,15 @@
                 const data = await response.json();
                 const content = data.choices[0].message.content;
 
-                // Verificação básica para conteúdo apropriado
-                if (content.toLowerCase().includes('inapropriado') || content.toLowerCase().includes('violência')) {
-                    throw new Error('Conteúdo inapropriado detectado.');
-                }
-
                 const responseElement = document.getElementById(responseArea);
                 responseElement.textContent = content;
                 responseElement.classList.remove('hidden');
+
+                // Se for uma história, gerar imagens relacionadas
+                if (isStory) {
+                    generateImageLinks(content);
+                }
+
             } catch (error) {
                 console.error('Erro ao chamar a API:', error);
                 const responseElement = document.getElementById(responseArea);
@@ -292,16 +312,21 @@
             }
         }
 
+        function getTeachersList() {
+            return Object.entries(subjectTeacherMap)
+                .map(([subject, teacher]) => `${teacher} (${subject})`)
+                .join(', ');
+        }
+
         async function submitQuestion() {
             const question = document.getElementById('questionInput').value.trim();
             if (!question) return;
 
-            const prompt = `Por favor, explique de forma simples e amigável, como se estivesse falando com uma criança sobre ${currentSubject}: ${question}`;
+            const prompt = `${question}`;
             await callGroqAPI(prompt);
         }
 
         async function generateStory() {
-            const characters = document.getElementById('charactersCount').value;
             const names = document.getElementById('characterNames').value;
             const setting = document.getElementById('storySetting').value;
             const theme = document.getElementById('storyTheme').value;
@@ -309,15 +334,13 @@
             const hobbies = document.getElementById('charactersHobbies').value;
             const magicObject = document.getElementById('magicObject').value;
             const challenge = document.getElementById('storyChallenge').value;
-            const moral = document.getElementById('storyMoral').value;
 
-            if (!characters || !names || !setting || !theme || !genre || !hobbies || !magicObject || !challenge || !moral) {
+            if (!names || !setting || !theme || !genre || !hobbies || !magicObject || !challenge) {
                 alert('Por favor, preencha todos os campos!');
                 return;
             }
 
             const prompt = `Por favor, crie uma história infantil com os seguintes elementos:
-            - Número de personagens: ${characters}
             - Nomes dos personagens: ${names}
             - Cenário: ${setting}
             - Tema: ${theme}
@@ -325,14 +348,45 @@
             - O que os personagens gostam de fazer: ${hobbies}
             - Objeto mágico: ${magicObject}
             - Desafio ou problema: ${challenge}
-            - Moral ou lição: ${moral}
 
-            A história deve ser educativa, divertida e apropriada para crianças.`;
+            A história deve ser educativa, divertida e apropriada para crianças. No final, inclua a moral ou lição aprendida.`;
 
             await callGroqAPI(prompt, true);
         }
+
+        function generateImageLinks(storyContent) {
+            // Extrair 3 palavras-chave da história
+            const words = storyContent.split(/\s+/);
+            const keywordCounts = {};
+
+            words.forEach(word => {
+                word = word.toLowerCase().replace(/[.,!?:;()"]/g, '');
+                if (word.length > 4) {
+                    keywordCounts[word] = (keywordCounts[word] || 0) + 1;
+                }
+            });
+
+            const sortedKeywords = Object.keys(keywordCounts).sort((a, b) => keywordCounts[b] - keywordCounts[a]);
+            const topKeywords = sortedKeywords.slice(0, 3);
+
+            const imageLinksDiv = document.getElementById('imageLinks');
+            imageLinksDiv.innerHTML = ''; // Limpar conteúdo anterior
+
+            topKeywords.forEach(keyword => {
+                const url = `https://www.google.com/search?q=${encodeURIComponent(keyword)}&tbm=isch`;
+                const linkElement = document.createElement('a');
+                linkElement.href = url;
+                linkElement.target = '_blank';
+                linkElement.classList.add('block', 'bg-white', 'p-4', 'rounded-lg', 'text-center', 'shadow');
+                linkElement.innerHTML = `<p class="text-purple-600 font-bold">${keyword.charAt(0).toUpperCase() + keyword.slice(1)}</p>`;
+                imageLinksDiv.appendChild(linkElement);
+            });
+
+            document.getElementById('storyImages').classList.remove('hidden');
+        }
     </script>
 
+    <!-- Estilos CSS -->
     <style>
         /* Estilos personalizados */
         .gradient-background {
@@ -381,6 +435,10 @@
             transform: translateY(-5px);
         }
 
+        .subject-card img {
+            border: 2px solid white;
+        }
+
         .math {
             background-color: #ec4899;
         }
@@ -397,7 +455,6 @@
             background-color: #3b82f6;
         }
 
-        /* Novas cores para as matérias */
         .geography {
             background-color: #f59e0b;
         }
