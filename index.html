@@ -126,7 +126,6 @@
             </h2>
 
             <div class="space-y-4">
-                <!-- Removido o campo de quantidade de personagens -->
                 <div>
                     <label class="block text-purple-600 font-bold mb-2">
                         Quais são os nomes dos personagens?
@@ -151,7 +150,6 @@
                         placeholder="Ex: uma aventura espacial, um mistério na escola">
                 </div>
 
-                <!-- Modificado para um menu de seleção -->
                 <div>
                     <label class="block text-purple-600 font-bold mb-2">
                         Qual é o gênero da história?
@@ -190,7 +188,6 @@
                         placeholder="Ex: salvar a floresta, encontrar um amigo perdido">
                 </div>
 
-                <!-- Removido o campo da moral da história -->
 
                 <button onclick="generateStory()" id="generateStoryBtn"
                     class="w-full px-4 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 font-bold mt-4">
@@ -198,25 +195,20 @@
                 </button>
 
                 <div id="storyResponse" class="response-area hidden"></div>
-                <!-- Área para as imagens relacionadas -->
                 <div id="storyImages" class="mt-4 hidden">
                     <h3 class="text-lg font-bold text-purple-600 mb-2">Imagens relacionadas à história:</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="imageLinks">
-                        <!-- Links serão inseridos aqui -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Script JavaScript -->
     <script>
-        // Configuração da API Groq
         const GROQ_API_KEY = "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";
         let currentSubject = '';
         let currentTeacher = '';
 
-        // Mapeamento de matérias para professores
         const subjectTeacherMap = {
             'Matemática': 'Prof. Carlos',
             'História': 'Profª. Ana',
@@ -228,7 +220,6 @@
             'Arte': 'Profª. Sofia'
         };
 
-        // Funções de navegação
         function showSection(sectionName) {
             document.getElementById('mainSection').classList.add('hidden');
             document.getElementById('subjectsSection').classList.add('hidden');
@@ -236,7 +227,6 @@
 
             document.getElementById(`${sectionName}Section`).classList.remove('hidden');
 
-            // Reset responses
             document.getElementById('questionResponse').classList.add('hidden');
             document.getElementById('storyResponse').classList.add('hidden');
             document.getElementById('storyImages').classList.add('hidden');
@@ -258,7 +248,6 @@
             document.getElementById('questionResponse').classList.add('hidden');
         }
 
-        // Funções de chamada à API
         async function callGroqAPI(prompt, isStory = false) {
             const button = isStory ? 'generateStoryBtn' : 'submitQuestionBtn';
             const responseArea = isStory ? 'storyResponse' : 'questionResponse';
@@ -296,7 +285,6 @@
                 responseElement.textContent = content;
                 responseElement.classList.remove('hidden');
 
-                // Se for uma história, gerar imagens relacionadas
                 if (isStory) {
                     generateImageLinks(content);
                 }
@@ -355,7 +343,6 @@
         }
 
         function generateImageLinks(storyContent) {
-            // Extrair 3 palavras-chave da história
             const words = storyContent.split(/\s+/);
             const keywordCounts = {};
 
@@ -370,7 +357,7 @@
             const topKeywords = sortedKeywords.slice(0, 3);
 
             const imageLinksDiv = document.getElementById('imageLinks');
-            imageLinksDiv.innerHTML = ''; // Limpar conteúdo anterior
+            imageLinksDiv.innerHTML = ''; 
 
             topKeywords.forEach(keyword => {
                 const url = `https://www.google.com/search?q=${encodeURIComponent(keyword)}&tbm=isch`;
@@ -386,9 +373,7 @@
         }
     </script>
 
-    <!-- Estilos CSS -->
     <style>
-        /* Estilos personalizados */
         .gradient-background {
             background: linear-gradient(180deg, #c4b5fd 0%, #e9d5ff 100%);
             min-height: 100vh;
